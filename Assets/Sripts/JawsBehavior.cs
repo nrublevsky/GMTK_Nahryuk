@@ -9,6 +9,8 @@ public class JawsBehavior : MonoBehaviour
     public GameObject upJaw;
     public GameObject lowJaw;
     public GameObject pivot;
+    public Animator animator;
+
 
     public float rotationAngleUp;
     public float rotationAngleDown;
@@ -28,7 +30,15 @@ public class JawsBehavior : MonoBehaviour
 
     public void OpenJaw()
     {
-        upJaw.transform.RotateAround(pivot.transform.position, Vector3.back, rotationAngleUp);
-        lowJaw.transform.RotateAround(pivot.transform.position, -Vector3.back, rotationAngleDown);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetTrigger("startClosing");
+            animator.ResetTrigger("startOpening");
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animator.SetTrigger("startOpening");
+            animator.ResetTrigger("startClosing");
+        }
     }
 }
