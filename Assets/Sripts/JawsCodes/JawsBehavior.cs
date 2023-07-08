@@ -33,11 +33,23 @@ public class JawsBehavior : MonoBehaviour
         {
             animator.SetTrigger("startClosing");
             animator.ResetTrigger("startOpening");
+            animator.SetBool("gameLose", false);
+            animator.SetBool("gameWin", false);
         }
 
-        if (gameManager.gameLost)
+        if (gameManager.gameLost && !gameManager.gameWon)
         {
+            
             StopAllCoroutines();
+            animator.SetBool("gameLose", true);
+            animator.SetBool("gameWin", false);
+        }
+        if (!gameManager.gameLost && gameManager.gameWon)
+        {
+            
+            StopAllCoroutines();
+            animator.SetBool("gameLose", false);
+            animator.SetBool("gameWin", true);
         }
     }
 
@@ -58,7 +70,7 @@ public class JawsBehavior : MonoBehaviour
         animator.SetBool("Chewing", true);
         --gameManager.foodHp;
         gameManager.DisableBitten();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2f);
         animator.ResetTrigger("startChewing");
         animator.SetBool("Chewing", false);
         animator.SetBool("Chewed", true);
