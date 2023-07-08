@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class GameManager : MonoBehaviour
     public Animator jawsAnimator;
     public Animator handAnimator;
     public Animator gmAnimator;
+    public PuzzleManager puzzleManager;
+
+
 
     [Header("Lives")]
     public int jawsHp;
@@ -54,6 +59,7 @@ public class GameManager : MonoBehaviour
                 //display you lose text
                 //start 
             }
+          
         }
     }
 
@@ -63,4 +69,6 @@ public class GameManager : MonoBehaviour
         foodParts.RemoveAt(currLastIndex);
 
     }
+
+   
 }
