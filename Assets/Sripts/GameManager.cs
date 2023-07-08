@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.ParticleSystem;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +13,9 @@ public class GameManager : MonoBehaviour
     public Animator jawsAnimator;
     public Animator foodAnimator;
     public Animator gmAnimator;
+    public PuzzleManager puzzleManager;
+
+
 
     [Header("Lives")]
     public int jawsHp;
@@ -42,11 +44,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
 
 
-
-
-
-
     public void Update()
+
     {
         PlayGame();
     }
@@ -63,8 +62,7 @@ public class GameManager : MonoBehaviour
                 gameLost = true;
                 Debug.Log("you lose");
                 //display you lose text
-                
-            }   
+
         }
     }
 
@@ -76,7 +74,5 @@ public class GameManager : MonoBehaviour
         gmAnimator.SetInteger("timesMoved", foodHp);
     }
 
-    
 
-    
 }
