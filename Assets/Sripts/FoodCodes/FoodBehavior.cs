@@ -8,6 +8,8 @@ public class FoodBehavior : MonoBehaviour
     public GameObject hand;
     public Animator animator;
 
+    public BoxCollider hitBox;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,7 @@ public class FoodBehavior : MonoBehaviour
         animator.SetTrigger("HitBack");
 
         animator.SetBool("Hitted", true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.03f);
 
         animator.ResetTrigger("HitBack");
         animator.SetBool("Hitted", false);
