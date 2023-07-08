@@ -56,7 +56,7 @@ public class LooseTooth : MonoBehaviour
         gMAnimator.SetTrigger("moveBack");
         gMAnimator.SetBool("moved", true);
         animator.SetTrigger("getHurt");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2f);
         gMAnimator.SetBool("moved", false);
     }
 
