@@ -50,14 +50,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jaws: {fileID: 4722342554591208510}
   food: {fileID: 8948433224225701199}
-  foodParts: []
+  foodParts:
+  - {fileID: 8995352930464841431}
+  - {fileID: 2779252147395894499}
+  - {fileID: 7341439742739167536}
+  - {fileID: 5725969017955330562}
+  - {fileID: 4961068193780980838}
   jawsAnimator: {fileID: 4069911727624538746}
   foodAnimator: {fileID: 8854013018461369086}
   gmAnimator: {fileID: 201438473710448558}
   jawsHp: 5
   foodHp: 5
   gameStarted: 0
-  puzzleFailed: 0
+  puzzleWon: 0
   gameWon: 0
   gameLost: 0
   jPositions1: []
@@ -207,6 +212,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 7264560276814489563}
+    - target: {fileID: 6684012938797628439, guid: c21507985db5eb840a2ba526d63ec08a, type: 3}
+      propertyPath: gManager
+      value: 
+      objectReference: {fileID: 7264560276814489563}
     - target: {fileID: 8131199642878732109, guid: c21507985db5eb840a2ba526d63ec08a, type: 3}
       propertyPath: m_Name
       value: Jaws
@@ -292,6 +301,26 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 091b592f55e29e54997df4760e08e414, type: 3}
+--- !u!1 &2779252147395894499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5121037152907098611, guid: 091b592f55e29e54997df4760e08e414, type: 3}
+  m_PrefabInstance: {fileID: 7025746475973666064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4961068193780980838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2691241689889192310, guid: 091b592f55e29e54997df4760e08e414, type: 3}
+  m_PrefabInstance: {fileID: 7025746475973666064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5725969017955330562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3384117887060037394, guid: 091b592f55e29e54997df4760e08e414, type: 3}
+  m_PrefabInstance: {fileID: 7025746475973666064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7341439742739167536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 315955380099996704, guid: 091b592f55e29e54997df4760e08e414, type: 3}
+  m_PrefabInstance: {fileID: 7025746475973666064}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8008810886803186842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1055377383700529546, guid: 091b592f55e29e54997df4760e08e414, type: 3}
@@ -305,5 +334,10 @@ Animator:
 --- !u!1 &8948433224225701199 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2139015937106008159, guid: 091b592f55e29e54997df4760e08e414, type: 3}
+  m_PrefabInstance: {fileID: 7025746475973666064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8995352930464841431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2113770313349913543, guid: 091b592f55e29e54997df4760e08e414, type: 3}
   m_PrefabInstance: {fileID: 7025746475973666064}
   m_PrefabAsset: {fileID: 0}
