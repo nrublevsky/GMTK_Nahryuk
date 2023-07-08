@@ -20,14 +20,14 @@ public class PuzzleManager : MonoBehaviour
     public bool challengeDone;
     public bool challanegeIsInProgress;
     public float puzzleObjectsCount;
-    public bool mustPressSpace;
+    public bool mustPressKeys;
     public bool keyIsPressed;
     // Start is called before the first frame update
     void Start()
     {
         challengeDone = false;
         challanegeIsInProgress = true;
-        mustPressSpace = false;
+        mustPressKeys = false;
         keyIsPressed = true;
         timerOn = false;
         timeLeft = Random.Range(3, 9);
@@ -55,6 +55,7 @@ public class PuzzleManager : MonoBehaviour
 
 
         }
+        
 
     }
 
@@ -90,15 +91,15 @@ public class PuzzleManager : MonoBehaviour
 
 
     }
-    public void MustPressSpace() 
+    public void MustPressKeys() 
     { 
-    if ( mustPressSpace ) 
+    if (mustPressKeys) 
         {
             challanegeIsInProgress = true;
         
-        if(Input.GetKeyDown(KeyCode.Space)) 
+        if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D)) 
             {
-
+                mustPressKeys = false;
                 Debug.Log("Space is pressed! Well done!");
             
             
