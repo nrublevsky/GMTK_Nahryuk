@@ -19,4 +19,18 @@ public class FoodBehavior : MonoBehaviour
     {
         
     }
+
+    public IEnumerator HitBack() { 
+        
+        int random = Random.Range(0, 3);
+
+        animator.SetInteger("RandomPath", random);
+        animator.SetTrigger("HitBack");
+
+        animator.SetBool("Hitted", true);
+        yield return new WaitForSeconds(1);
+
+        animator.ResetTrigger("HitBack");
+        animator.SetBool("Hitted", false);
+    }
 }
