@@ -3,7 +3,12 @@ guid: 6e5fd220613a69444a1764a5937d4c43
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Burger
+    second: {fileID: 2100000, guid: d0b9dbba5ad9e724c820ae47b7e89f4d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
