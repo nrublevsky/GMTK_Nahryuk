@@ -309,11 +309,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1884362308 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4069911727624538746, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
-  m_PrefabInstance: {fileID: 6788731167223724041}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6788731167223724041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -322,10 +317,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 872500798097850691, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7261759328381238583, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -369,18 +360,6 @@ PrefabInstance:
     - target: {fileID: 7261759328381238583, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7264560276814489563, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
-      propertyPath: jawsHp
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 7898347467730255716, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1884362308}
-    - target: {fileID: 7898347467730255716, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
-      propertyPath: teethToLose
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8592356005600567443, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
       propertyPath: m_Name

@@ -34,7 +34,7 @@ Transform:
   - {fileID: 8008810886803186842}
   - {fileID: 2138415899934907578}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7264560276814489563
 MonoBehaviour:
@@ -59,7 +59,7 @@ MonoBehaviour:
   jawsAnimator: {fileID: 4069911727624538746}
   foodAnimator: {fileID: 8854013018461369086}
   gmAnimator: {fileID: 201438473710448558}
-  jawsHp: 5
+  jawsHp: 16
   foodHp: 5
   gameStarted: 0
   puzzleWon: 0
@@ -216,6 +216,18 @@ PrefabInstance:
       propertyPath: gManager
       value: 
       objectReference: {fileID: 7264560276814489563}
+    - target: {fileID: 6684012938797628439, guid: c21507985db5eb840a2ba526d63ec08a, type: 3}
+      propertyPath: gMAnimator
+      value: 
+      objectReference: {fileID: 201438473710448558}
+    - target: {fileID: 6684012938797628439, guid: c21507985db5eb840a2ba526d63ec08a, type: 3}
+      propertyPath: gmAnimator
+      value: 
+      objectReference: {fileID: 201438473710448558}
+    - target: {fileID: 6684012938797628439, guid: c21507985db5eb840a2ba526d63ec08a, type: 3}
+      propertyPath: teethToLose
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8131199642878732109, guid: c21507985db5eb840a2ba526d63ec08a, type: 3}
       propertyPath: m_Name
       value: Jaws
