@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> foodParts;
     public Animator jawsAnimator;
     public Animator handAnimator;
+    public Animator gmAnimator;
 
     [Header("Lives")]
     public int jawsHp;
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
         //select random puzzle from puzzles list and instantiate in required position
         if (gameStarted)
         {
-
+            gmAnimator.SetInteger("timesMoved",foodHp);
             if (foodHp <= 0)
             {
                 gameLost = true;
