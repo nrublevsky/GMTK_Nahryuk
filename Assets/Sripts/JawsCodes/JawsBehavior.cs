@@ -41,4 +41,19 @@ public class JawsBehavior : MonoBehaviour
             animator.ResetTrigger("startClosing");
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Food"))
+        {
+            BiteFood(other.gameObject);
+            //set trigger to Chewing
+        }
+    }
+
+    public void BiteFood(GameObject food)
+    {
+        Debug.Log("You bit! I Chew!");
+        //lower hp
+    }
 }
