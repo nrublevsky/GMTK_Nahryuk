@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void Awake()
+    public void Update()
     {
         PlayGame();
     }
