@@ -64,7 +64,14 @@ public class GameManager : MonoBehaviour
                 Debug.Log("you lose");
                 //display you lose text
                 
-            }   
+            }
+            if (jawsHp <= 0)
+            {
+                gameWon = true;
+                Debug.Log("you lose");
+                //display you lose text
+
+            }
         }
     }
 
