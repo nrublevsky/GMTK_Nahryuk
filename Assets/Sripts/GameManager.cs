@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     [Header("GameStates")]
     public bool gameStarted;
-    public bool puzzleFailed;
+    public bool puzzleWon;
     public bool gameWon;
     public bool gameLost;
 
@@ -39,11 +39,11 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
- 
 
-   
 
-   
+
+
+
 
     public void Awake()
     {
@@ -62,12 +62,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("you lose");
                 //display you lose text
                 //start 
-            }
-
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                PuzzleFinished();
-            }
+            }   
         }
     }
 
@@ -79,10 +74,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void PuzzleFinished()
-    {
-        Debug.Log("Puzzle Done! Fight Back!!!");
-        foodAnimator.SetTrigger("HitBack");
+    
 
-    }
+    
 }
