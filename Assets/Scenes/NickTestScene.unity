@@ -324,6 +324,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1539313589 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 201438473710448558, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
+  m_PrefabInstance: {fileID: 6788731167223724041}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1583841676 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5725969017955330562, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
@@ -386,6 +391,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7264560276814489563, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
+      propertyPath: gmAnimator
+      value: 
+      objectReference: {fileID: 1539313589}
     - target: {fileID: 7264560276814489563, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
       propertyPath: foodParts.Array.size
       value: 5
