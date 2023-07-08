@@ -7,6 +7,7 @@ public class LooseTooth : MonoBehaviour
     public List<GameObject> teeth;
     public GameManager gManager;
     public Animator animator;
+    public Animator gMAnimator;
 
     public int teethToLose;
     public float speed;
@@ -48,7 +49,11 @@ public class LooseTooth : MonoBehaviour
             teeth.Remove(tInQuestion);
             yield return new WaitForSeconds(0.001f);
         }
+        gMAnimator.SetTrigger("moveBack");
+        gMAnimator.SetBool("moved", true);
         animator.SetTrigger("getHurt");
+        yield return new WaitForSeconds(2);
+        gMAnimator.SetBool("moved", false);
     }
 
     public GameObject RandomTooth(List<GameObject> tees)
