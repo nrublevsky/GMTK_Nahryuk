@@ -1,0 +1,46 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class HitMouth : MonoBehaviour
+{
+
+    public LooseTooth lt;
+    public int hits;
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    private void Awake()
+    {
+        hits = 0;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Mouth"))
+        {
+            if (hits == 0)
+            {
+                StartCoroutine(Hit());
+            }
+        }
+    }
+
+    public IEnumerator Hit()
+    {
+        Debug.Log("Hit");
+        lt.HurtTeeth();
+        ++hits;
+        yield return new WaitForSeconds(0.1f);
+        hits = 0;
+    }
+}

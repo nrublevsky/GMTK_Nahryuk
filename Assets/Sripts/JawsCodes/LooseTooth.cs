@@ -22,31 +22,35 @@ public class LooseTooth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TestTeeth();
+
     }
 
-    void TestTeeth()
+    public void HurtTeeth()
     {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            StartCoroutine(LooseToothy(teethToLose));
-        }
+        StartCoroutine(LooseToothy(teethToLose));
     }
+
     public IEnumerator LooseToothy(int nTeeth)
     {
 
-        int localN = 1;
+        int localN = Random.Range(1, teethToLose);
 
         while (localN != nTeeth)
         {
             GameObject tInQuestion = RandomTooth(teeth);
+
             tInQuestion.transform.parent = null;
             Rigidbody tRb = tInQuestion.GetComponent<Rigidbody>();
+
             tRb.useGravity = true;
-            tRb.velocity = new Vector3(Random.Range(-1, 1)*speed, Random.Range(-1, 1)*speed, -1);
+
+            tRb.velocity = new Vector3(Random.Range(-1, 1) * speed, Random.Range(-1, 1) * speed, -1);
+
             ++localN;
             --gManager.jawsHp;
+
             teeth.Remove(tInQuestion);
+
             yield return new WaitForSeconds(0.001f);
         }
         gMAnimator.SetTrigger("moveBack");
