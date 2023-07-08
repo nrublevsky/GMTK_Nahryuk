@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameStarted = true;
+        /*foodHp = foodParts.Count;*/
     }
 
     // Update is called once per frame
@@ -52,16 +53,17 @@ public class GameManager : MonoBehaviour
 
     void PlayGame()
     {
+        /*gmAnimator.SetInteger("timesMoved", foodHp);*/
         //select random puzzle from puzzles list and instantiate in required position
         if (gameStarted)
         {
-            gmAnimator.SetInteger("timesMoved", foodHp);
+            /*gmAnimator.SetInteger("timesMoved", foodHp);*/
             if (foodHp <= 0)
             {
                 gameLost = true;
                 Debug.Log("you lose");
                 //display you lose text
-                //start 
+                
             }   
         }
     }
@@ -71,7 +73,7 @@ public class GameManager : MonoBehaviour
         int currLastIndex = foodParts.Count - 1;
         foodParts[currLastIndex].SetActive(false);
         foodParts.RemoveAt(currLastIndex);
-
+        gmAnimator.SetInteger("timesMoved", foodHp);
     }
 
     
