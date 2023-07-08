@@ -11,6 +11,7 @@ public class uiManager : MonoBehaviour
     public GameObject youWonScreen;
     private PuzzleManager puzzleManager;
     public TextMeshProUGUI livesText;
+    public GameObject MustPressKeys;
     private GameManager gameManagerScript;    // Start is called before the first frame update
 
     public void Start()
@@ -35,8 +36,16 @@ public class uiManager : MonoBehaviour
 
 
         }
-
-
+        if (puzzleManager.mustPressKeys) 
+        { 
+        
+        MustPressKeys.SetActive(true);
+        }
+        if(!puzzleManager.mustPressKeys) 
+        { 
+        
+        MustPressKeys.SetActive(false);
+        }
     }
     public void Retry() 
     {
