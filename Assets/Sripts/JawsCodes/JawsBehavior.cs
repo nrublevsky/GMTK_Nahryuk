@@ -15,7 +15,6 @@ public class JawsBehavior : MonoBehaviour
     public float rotationAngleUp;
     public float rotationAngleDown;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -25,20 +24,20 @@ public class JawsBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OpenJaw();
+        JawControl();
     }
 
-    public void OpenJaw()
+    public void JawControl()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (gameManager.gameStarted)
         {
             animator.SetTrigger("startClosing");
             animator.ResetTrigger("startOpening");
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+
+        if (gameManager.gameLost)
         {
-            animator.SetTrigger("startOpening");
-            animator.ResetTrigger("startClosing");
+            StopAllCoroutines();
         }
     }
 
@@ -46,14 +45,33 @@ public class JawsBehavior : MonoBehaviour
     {
         if (other.CompareTag("Food"))
         {
-            BiteFood(other.gameObject);
+
+            StartCoroutine(BiteFood(other.gameObject));
             //set trigger to Chewing
         }
     }
 
-    public void BiteFood(GameObject food)
+    public IEnumerator BiteFood(GameObject food)
     {
         Debug.Log("You bit! I Chew!");
-        //lower hp
+        animator.SetTrigger("startChewing");
+        animator.SetBool("Chewing", true);
+        --gameManager.foodHp;
+        gameManager.DisableBitten();
+        yield return new WaitForSeconds(2);
+        animator.ResetTrigger("startChewing");
+        animator.SetBool("Chewing", false);
+        animator.SetBool("Chewed", true);
+        yield return new WaitForSeconds(0.1f);
+        animator.SetTrigger("startOpening");
+
+    }
+
+    public IEnumerator FightBack(GameObject food)
+    {
+
+        //instantiate hand with random weapon from list
+        //set Hand fighting animation
+        return null;
     }
 }
