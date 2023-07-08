@@ -1,26 +1,58 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PuzzleManager : MonoBehaviour
 {
     public List<GameObject> clickOnObjectsChallange;
+    public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI livesText;
+    public TextMeshProUGUI timeLeftText;
+    public TextMeshProUGUI[] challengeText;
+    public GameManager gameManager;
+    private int lives;
+    public bool timerOn = false;
+    public Button restartButton;
+    private int timeLeft;
+    public bool isGameActive;
     public bool challengeDone;
     public bool challanegeIsInProgress;
     public float puzzleObjectsCount;
+    public bool mustPressSpace;
+    public bool keyIsPressed;
     // Start is called before the first frame update
     void Start()
     {
         challengeDone = false;
         challanegeIsInProgress = true;
+        mustPressSpace = false;
+        keyIsPressed = true;
+        timeLeft = Random.Range(3, 9);
+        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
 
     {
-     
-        
+        if (challanegeIsInProgress && !timerOn)
+        {
+            
+            timeLeftText.text = "Time Left: " + timeLeft;
+            StartCoroutine(timeTake());
+
+
+        }
+        if (timeLeft < 1)
+        {   
+            challanegeIsInProgress = false;
+            timeLeft = 0;
+            Debug.Log("Game Over");
+            
+        }
+
     }
 
     /* private Vector3 GenerateSpawnPosition() 
@@ -48,8 +80,42 @@ public class PuzzleManager : MonoBehaviour
         {
             challengeDone=true;
             challanegeIsInProgress=false;
+            timeLeft = Random.Range(3, 8);
             Debug.Log("Challenge Done");
         
         }
+
+
+    }
+    public void MustPressSpace() 
+    { 
+    if ( mustPressSpace ) 
+        {
+            challanegeIsInProgress = true;
+        
+        if(Input.GetKeyDown(KeyCode.Space)) 
+            {
+
+                Debug.Log("Space is pressed! Well done!");
+            
+            
+            }
+        
+        
+        }
+    
+    
+    }
+
+   IEnumerator timeTake() 
+    { 
+        timerOn = true;
+        yield return new WaitForSeconds(1);
+        timeLeft -= 1;
+        timeLeftText.text = "Time Left: " + timeLeft;
+        timerOn = false;
+
+    
+    
     }
 }
