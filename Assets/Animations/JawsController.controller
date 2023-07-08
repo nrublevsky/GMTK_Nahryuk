@@ -60,6 +60,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: startOpening
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: Chewed
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8712540572683629883}
   m_Solo: 0
@@ -85,16 +88,16 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -8712540572683629883}
-    m_Position: {x: 320, y: 60, z: 0}
+    m_Position: {x: 280, y: -110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4821398939885698890}
-    m_Position: {x: 650, y: 60, z: 0}
+    m_Position: {x: 650, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 461863932051521856}
-    m_Position: {x: 660, y: -150, z: 0}
+    m_Position: {x: 650, y: -120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3404011937708414660}
-    m_Position: {x: 350, y: -150, z: 0}
+    m_Position: {x: 280, y: 90, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
