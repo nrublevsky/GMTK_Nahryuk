@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject food;
     public List<GameObject> foodParts;
     public Animator jawsAnimator;
-    public Animator handAnimator;
+    public Animator foodAnimator;
     public Animator gmAnimator;
     public PuzzleManager puzzleManager;
 
@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     [Header("GameStates")]
     public bool gameStarted;
-    public bool puzzleFailed;
+    public bool puzzleWon;
     public bool gameWon;
     public bool gameLost;
 
@@ -38,37 +38,38 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameStarted = true;
+        /*foodHp = foodParts.Count;*/
     }
 
     // Update is called once per frame
-    void Update()
+
     {
         PlayGame();
     }
 
     void PlayGame()
     {
+        /*gmAnimator.SetInteger("timesMoved", foodHp);*/
         //select random puzzle from puzzles list and instantiate in required position
         if (gameStarted)
         {
-            gmAnimator.SetInteger("timesMoved",foodHp);
+            /*gmAnimator.SetInteger("timesMoved", foodHp);*/
             if (foodHp <= 0)
             {
                 gameLost = true;
                 Debug.Log("you lose");
                 //display you lose text
-                //start 
-            }
-          
+
         }
     }
 
-    public void DisableBitten() {
+    public void DisableBitten()
+    {
         int currLastIndex = foodParts.Count - 1;
         foodParts[currLastIndex].SetActive(false);
         foodParts.RemoveAt(currLastIndex);
-
+        gmAnimator.SetInteger("timesMoved", foodHp);
     }
 
-   
+
 }

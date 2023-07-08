@@ -8,6 +8,7 @@ TagManager:
   - Teeth
  - ClickPoint
   - Food Parts
+  - Hand
   layers:
   - Default
   - TransparentFX
