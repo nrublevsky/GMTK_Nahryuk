@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Food
   - Teeth
+  - Food Parts
   layers:
   - Default
   - TransparentFX
