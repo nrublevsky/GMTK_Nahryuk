@@ -67,11 +67,5 @@ public class JawsBehavior : MonoBehaviour
 
     }
 
-    public IEnumerator FightBack(GameObject food)
-    {
-
-        //instantiate hand with random weapon from list
-        //set Hand fighting animation
-        return null;
-    }
+    
 }
