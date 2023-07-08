@@ -8,14 +8,14 @@ public class PuzzleManager : MonoBehaviour
 {
     public List<GameObject> clickOnObjectsChallange;
     public TextMeshProUGUI gameOverText;
-    public TextMeshProUGUI livesText;
+    
     public TextMeshProUGUI timeLeftText;
     public TextMeshProUGUI[] challengeText;
-    public GameManager gameManager;
+    public uiManager uiManager;
     private int lives;
     public bool timerOn = false;
     public Button restartButton;
-    private int timeLeft;
+    public int timeLeft;
     public bool isGameActive;
     public bool challengeDone;
     public bool challanegeIsInProgress;
@@ -29,6 +29,7 @@ public class PuzzleManager : MonoBehaviour
         challanegeIsInProgress = true;
         mustPressSpace = false;
         keyIsPressed = true;
+        timerOn = false;
         timeLeft = Random.Range(3, 9);
         
     }
@@ -49,8 +50,10 @@ public class PuzzleManager : MonoBehaviour
         {   
             challanegeIsInProgress = false;
             timeLeft = 0;
-            Debug.Log("Game Over");
+            uiManager.GameOver();
             
+
+
         }
 
     }
