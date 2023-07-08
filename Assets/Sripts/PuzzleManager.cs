@@ -11,7 +11,7 @@ public class PuzzleManager : MonoBehaviour
     
     public TextMeshProUGUI timeLeftText;
     public TextMeshProUGUI[] challengeText;
-    public uiManager uiManager;
+    private uiManager uiManager;
     private int lives;
     public bool timerOn = false;
     public Button restartButton;
@@ -31,7 +31,7 @@ public class PuzzleManager : MonoBehaviour
         keyIsPressed = true;
         timerOn = false;
         timeLeft = Random.Range(3, 9);
-        
+        uiManager=GameObject.Find("UIManager").GetComponent<uiManager>();
     }
 
     // Update is called once per frame
