@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Objects")]
     public GameObject jaws;
+    public LooseTooth ltooth;
     public GameObject food;
     public List<GameObject> foodParts;
     public Animator jawsAnimator;
@@ -51,7 +52,7 @@ public class GameManager : MonoBehaviour
         PlayGame();
     }
 
-    void PlayGame()
+    public void PlayGame()
     {
         /*gmAnimator.SetInteger("timesMoved", foodHp);*/
         //select random puzzle from puzzles list and instantiate in required position
@@ -61,17 +62,29 @@ public class GameManager : MonoBehaviour
             if (foodHp <= 0)
             {
                 gameLost = true;
-                Debug.Log("you lose");
-                //display you lose text
-                
-            }
-            if (jawsHp <= 0)
-            {
-                gameWon = true;
+                gameWon = false;
+
+                jawsAnimator.SetBool("Chewed", false);
+                jawsAnimator.SetBool("Chewing", false);
+                jawsAnimator.ResetTrigger("startClosing");
+                jawsAnimator.ResetTrigger("startOpening");
+                jawsAnimator.ResetTrigger("startChewing");
+                jawsAnimator.ResetTrigger("getHurt");
+
                 Debug.Log("you lose");
                 //display you lose text
 
             }
+            if (jawsHp <= 0)
+            {
+                gameWon = true;
+                gameLost = false;
+                Debug.Log("you win");
+                //display you lose text
+
+            }
+
+            TestHandMouth();
         }
     }
 
@@ -83,7 +96,26 @@ public class GameManager : MonoBehaviour
         gmAnimator.SetInteger("timesMoved", foodHp);
     }
 
-    
 
-    
+    public IEnumerator WinPuzzle()
+    {
+        puzzleWon = true;
+
+        foodAnimator.SetTrigger("HitBack");
+        yield return new WaitForSeconds(1f);
+        foodAnimator.ResetTrigger("HitBack");
+        foodAnimator.SetBool("Hitted", true);
+        yield return new WaitForSeconds(1f);
+        foodAnimator.ResetTrigger("HitBack");
+        foodAnimator.SetBool("Hitted", false);
+    }
+
+    public void TestHandMouth()
+    {
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            StartCoroutine(WinPuzzle());
+        }
+    }
 }
