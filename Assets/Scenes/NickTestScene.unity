@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!95 &292419982 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8854013018461369086, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
+  m_PrefabInstance: {fileID: 6788731167223724041}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &448465541 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7341439742739167536, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
@@ -347,6 +352,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 21988533595757328, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836467522201702193, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836467522201702193, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836467522201702193, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.624
+      objectReference: {fileID: 0}
     - target: {fileID: 7261759328381238583, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -395,6 +416,10 @@ PrefabInstance:
       propertyPath: gmAnimator
       value: 
       objectReference: {fileID: 1539313589}
+    - target: {fileID: 7264560276814489563, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
+      propertyPath: handAnimator
+      value: 
+      objectReference: {fileID: 292419982}
     - target: {fileID: 7264560276814489563, guid: 7c0d79f0a7ecc4b4b8f7be289924894c, type: 3}
       propertyPath: foodParts.Array.size
       value: 5

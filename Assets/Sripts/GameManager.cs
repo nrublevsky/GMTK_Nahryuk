@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject food;
     public List<GameObject> foodParts;
     public Animator jawsAnimator;
-    public Animator handAnimator;
+    public Animator foodAnimator;
     public Animator gmAnimator;
 
     [Header("Lives")]
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         //select random puzzle from puzzles list and instantiate in required position
         if (gameStarted)
         {
-            gmAnimator.SetInteger("timesMoved",foodHp);
+            gmAnimator.SetInteger("timesMoved", foodHp);
             if (foodHp <= 0)
             {
                 gameLost = true;
@@ -54,13 +54,26 @@ public class GameManager : MonoBehaviour
                 //display you lose text
                 //start 
             }
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                PuzzleFinished();
+            }
         }
     }
 
-    public void DisableBitten() {
+    public void DisableBitten()
+    {
         int currLastIndex = foodParts.Count - 1;
         foodParts[currLastIndex].SetActive(false);
         foodParts.RemoveAt(currLastIndex);
+
+    }
+
+    public void PuzzleFinished()
+    {
+        Debug.Log("Puzzle Done! Fight Back!!!");
+        foodAnimator.SetTrigger("HitBack");
 
     }
 }
