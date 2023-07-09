@@ -11,10 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Easy.unity
     guid: f432136ea61232a4790f070d7c4ca8c8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Medium.unity
     guid: ac79b818df0f1e649ac370bc5f45c506
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Hard.unity
     guid: e8729f71afad23e49b512b54850e2c4a
+  - enabled: 1
+    path: Assets/Scenes/NickTestScene.unity
+    guid: e7fe645bf6a8016419e6f5f6f3cf3d8a
   m_configObjects: {}
