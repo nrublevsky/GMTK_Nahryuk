@@ -16,7 +16,7 @@ public class uiManager : MonoBehaviour
 
     public void Start()
     {
-        puzzleManager = GameObject.Find("ClickPuzzle").GetComponent<PuzzleManager>();
+        /*puzzleManager = GameObject.Find("ClickPuzzle").GetComponent<PuzzleManager>();*/
         gameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
@@ -36,16 +36,16 @@ public class uiManager : MonoBehaviour
 
 
         }
-        if (puzzleManager.mustPressKeys) 
+       /* if (puzzleManager.mustPressKeys) 
         { 
         
         MustPressKeys.SetActive(true);
-        }
-        if(!puzzleManager.mustPressKeys) 
+        }*/
+       /* if(!puzzleManager.mustPressKeys) 
         { 
         
         MustPressKeys.SetActive(false);
-        }
+        }*/
     }
     public void Retry() 
     {

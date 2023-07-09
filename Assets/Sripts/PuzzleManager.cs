@@ -22,6 +22,7 @@ public class PuzzleManager : MonoBehaviour
     public float puzzleObjectsCount;
     public bool mustPressKeys;
     public bool keyIsPressed;
+    
 
     public GameManager gm;
     // Start is called before the first frame update
@@ -34,6 +35,7 @@ public class PuzzleManager : MonoBehaviour
         timerOn = false;
         timeLeft = Random.Range(3, 9);
         uiManager = GameObject.Find("UIManager").GetComponent<uiManager>();
+       
     }
 
     // Update is called once per frame
@@ -43,7 +45,7 @@ public class PuzzleManager : MonoBehaviour
         if (challanegeIsInProgress && !timerOn)
         {
 
-            timeLeftText.text = "Time Left: " + timeLeft;
+           /* timeLeftText.text = "Time Left: " + timeLeft;*/
             StartCoroutine(timeTake());
 
 
@@ -52,7 +54,7 @@ public class PuzzleManager : MonoBehaviour
         {
             challanegeIsInProgress = false;
             timeLeft = 0;
-            uiManager.GameOver();
+           /* uiManager.GameOver();*/
 
 
 
@@ -121,10 +123,11 @@ public class PuzzleManager : MonoBehaviour
         timerOn = true;
         yield return new WaitForSeconds(1);
         timeLeft -= 1;
-        timeLeftText.text = "Time Left: " + timeLeft;
+        /*timeLeftText.text = "Time Left: " + timeLeft;*/
         timerOn = false;
 
 
 
     }
+   
 }
