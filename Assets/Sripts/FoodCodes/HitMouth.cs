@@ -29,8 +29,8 @@ public class HitMouth : MonoBehaviour
     {
         if (other.CompareTag("Mouth"))
         {
-            if (hits == 0)
-            {
+           /* if (hits == 0)
+            {*/
                 if (!jaws.chewingATM)
                 {
                     StartCoroutine(Hit());
@@ -40,7 +40,7 @@ public class HitMouth : MonoBehaviour
                     Debug.Log("Can't hit atm< srry");
                 }
                 
-            }
+            /*}*/
         }
     }
 

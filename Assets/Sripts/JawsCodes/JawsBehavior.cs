@@ -72,7 +72,7 @@ public class JawsBehavior : MonoBehaviour
             chewingATM = true;
         }*/
 
-        Debug.Log("You bit! I Chew!");
+        
         animator.SetTrigger("startChewing");
         animator.SetBool("Chewing", true);
         chewingATM = true;

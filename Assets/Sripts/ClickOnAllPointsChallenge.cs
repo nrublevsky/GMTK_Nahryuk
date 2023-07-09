@@ -42,7 +42,7 @@ public class ClickOnAllPointsChallenge : MonoBehaviour
 
     public void PlayClickSound()
     {
-        Debug.Log("Sound Play");
+       
         clickAudio.PlayOneShot(clickSound, 1.0f);
     }
 
