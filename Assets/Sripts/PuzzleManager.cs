@@ -8,7 +8,7 @@ public class PuzzleManager : MonoBehaviour
 {
     public List<GameObject> clickOnObjectsChallange;
     public TextMeshProUGUI gameOverText;
-    
+
     public TextMeshProUGUI timeLeftText;
     public TextMeshProUGUI[] challengeText;
     private uiManager uiManager;
@@ -22,6 +22,9 @@ public class PuzzleManager : MonoBehaviour
     public float puzzleObjectsCount;
     public bool mustPressKeys;
     public bool keyIsPressed;
+    
+
+    public GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +34,8 @@ public class PuzzleManager : MonoBehaviour
         keyIsPressed = true;
         timerOn = false;
         timeLeft = Random.Range(3, 9);
-        uiManager=GameObject.Find("UIManager").GetComponent<uiManager>();
+        uiManager = GameObject.Find("UIManager").GetComponent<uiManager>();
+       
     }
 
     // Update is called once per frame
@@ -40,22 +44,22 @@ public class PuzzleManager : MonoBehaviour
     {
         if (challanegeIsInProgress && !timerOn)
         {
-            
-            timeLeftText.text = "Time Left: " + timeLeft;
+
+           /* timeLeftText.text = "Time Left: " + timeLeft;*/
             StartCoroutine(timeTake());
 
 
         }
         if (timeLeft < 1)
-        {   
+        {
             challanegeIsInProgress = false;
             timeLeft = 0;
-            uiManager.GameOver();
-            
+           /* uiManager.GameOver();*/
+
 
 
         }
-        
+
 
     }
 
@@ -79,47 +83,51 @@ public class PuzzleManager : MonoBehaviour
 
     public void CheckClickState()
     {
-        if( clickOnObjectsChallange.Count.Equals(0) ) 
-        
+        if (clickOnObjectsChallange.Count.Equals(0))
         {
-            challengeDone=true;
-            challanegeIsInProgress=false;
+            challengeDone = true;
+            if (challengeDone)
+            {
+                gm.puzzleWon = true;
+            }
+            challanegeIsInProgress = false;
             timeLeft = Random.Range(3, 8);
             Debug.Log("Challenge Done");
-        
+
         }
 
 
     }
-    public void MustPressKeys() 
-    { 
-    if (mustPressKeys) 
+    public void MustPressKeys()
+    {
+        if (mustPressKeys)
         {
             challanegeIsInProgress = true;
-        
-        if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D)) 
+
+            if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
             {
                 mustPressKeys = false;
                 Debug.Log("Space is pressed! Well done!");
-            
-            
+
+
             }
-        
-        
+
+
         }
-    
-    
+
+
     }
 
-   IEnumerator timeTake() 
-    { 
+    IEnumerator timeTake()
+    {
         timerOn = true;
         yield return new WaitForSeconds(1);
         timeLeft -= 1;
-        timeLeftText.text = "Time Left: " + timeLeft;
+        /*timeLeftText.text = "Time Left: " + timeLeft;*/
         timerOn = false;
 
-    
-    
+
+
     }
+   
 }

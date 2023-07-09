@@ -11,12 +11,12 @@ public class uiManager : MonoBehaviour
     public GameObject youWonScreen;
     private PuzzleManager puzzleManager;
     public TextMeshProUGUI livesText;
-    public GameObject MustPressKeys;
-    private GameManager gameManagerScript;    // Start is called before the first frame update
+    //public GameObject MustPressKeys;
+    public GameManager gameManagerScript;    // Start is called before the first frame update
 
     public void Start()
     {
-        puzzleManager = GameObject.Find("ClickPuzzle").GetComponent<PuzzleManager>();
+        /*puzzleManager = GameObject.Find("ClickPuzzle").GetComponent<PuzzleManager>();*/
         gameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
@@ -36,16 +36,16 @@ public class uiManager : MonoBehaviour
 
 
         }
-        if (puzzleManager.mustPressKeys) 
+       /* if (puzzleManager.mustPressKeys) 
         { 
         
         MustPressKeys.SetActive(true);
-        }
-        if(!puzzleManager.mustPressKeys) 
+        }*/
+       /* if(!puzzleManager.mustPressKeys) 
         { 
         
         MustPressKeys.SetActive(false);
-        }
+        }*/
     }
     public void Retry() 
     {
@@ -64,9 +64,9 @@ public class uiManager : MonoBehaviour
 
     public void GameOver() 
     {
-        puzzleManager.challengeDone = false;
+       /* puzzleManager.challengeDone = false;
         puzzleManager.challanegeIsInProgress = false;
-        puzzleManager.timerOn = false;
+        puzzleManager.timerOn = false;*/
         gameoverScreen.SetActive(true);
         /*Time.timeScale = 0f;*/
 
