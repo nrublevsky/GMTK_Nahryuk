@@ -8,7 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Kitchen
-    second: {fileID: 2100000, guid: 90f912400aba6f44f8f1012f4abc5e5d, type: 2}
+    second: {fileID: 2100000, guid: 4c2cdf60092313240a400597193a8b45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kitchen_glass
+    second: {fileID: 2100000, guid: 5dbfd406d89fc4f4995209a40efa3765, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
