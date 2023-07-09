@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 210, z: 0}
 --- !u!33 &4829472293562882919
 MeshFilter:
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629393287076638242}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 8887826536013849386, guid: b4bb4d54e6e229645ab8dcdd89ab8b67, type: 3}
 --- !u!23 &6861913020847552521
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -104,8 +104,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 7.5717754, y: 1.4172541, z: 5.226121}
+  m_Center: {x: 3.2858746, y: 0.055628046, z: 0.04596175}
 --- !u!114 &2756367188944333846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,4 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodParticle: {fileID: 198000011254678926, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
-  puzzleManager: {fileID: 0}
+  puzzle: {fileID: 0}
+  clickSound: {fileID: 0}
