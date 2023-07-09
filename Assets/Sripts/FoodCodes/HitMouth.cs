@@ -49,7 +49,8 @@ public class HitMouth : MonoBehaviour
         Debug.Log("Hit");
         lt.HurtTeeth();
         ++hits;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
         hits = 0;
+        Debug.Log($"{hits} hits");
     }
 }

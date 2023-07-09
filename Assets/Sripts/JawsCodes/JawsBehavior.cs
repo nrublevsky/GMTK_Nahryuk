@@ -60,34 +60,34 @@ public class JawsBehavior : MonoBehaviour
         if (other.CompareTag("Food"))
         {
 
-            StartCoroutine(BiteFood(other.gameObject));
+            StartCoroutine(BiteFood());
             //set trigger to Chewing
         }
     }
 
-    public IEnumerator BiteFood(GameObject food)
+    public IEnumerator BiteFood()
     {
-        while (animName() == "JawChew")
+        /*while (animName() == "JawChew")
         {
             chewingATM = true;
-        }
+        }*/
 
         Debug.Log("You bit! I Chew!");
         animator.SetTrigger("startChewing");
         animator.SetBool("Chewing", true);
-        /*chewingATM = true;*/
+        chewingATM = true;
 
         foodAnim.SetBool("beChewed", true);
-
 
         --gameManager.foodHp;
         gameManager.DisableBitten();
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2);
 
         animator.ResetTrigger("startChewing");
         animator.SetBool("Chewing", false);
         animator.SetBool("Chewed", true);
+        chewingATM = false;
 
         foodAnim.SetBool("beChewed", false);
         
