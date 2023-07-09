@@ -9,12 +9,14 @@ public class GameManager : MonoBehaviour
 {
     [Header("Objects")]
     public GameObject jaws;
-    public LooseTooth ltooth;
+  
     public GameObject food;
+    public GameObject hand;
     public GameObject puzzleSpawn;
     public List<GameObject> puzzles;
 
     public List<GameObject> foodParts;
+    public List<GameObject> handPositions;
     public Animator jawsAnimator;
     public Animator foodAnimator;
     public Animator gmAnimator;
@@ -30,11 +32,7 @@ public class GameManager : MonoBehaviour
     public bool gameLost;
 
     [Header("Variables")]
-    public Vector3[] jPositions1;
-    public Vector3[] jPositions2;
-    public Vector3[] jPositions3;
 
-    public Vector3 puzzlePos;
 
     public GameObject curPuz;
     public PuzzleManager curPuzMan;
@@ -94,12 +92,15 @@ public class GameManager : MonoBehaviour
         int currLastIndex = foodParts.Count - 1;
         foodParts[currLastIndex].SetActive(false);
         foodParts.RemoveAt(currLastIndex);
+        handPositions.RemoveAt(currLastIndex);
+        hand.transform.position = handPositions[foodParts.Count - 1].transform.position;
         gmAnimator.SetInteger("timesMoved", foodHp);
     }
 
 
     public IEnumerator WinPuzzle()
     {
+        
         puzzleWon = false;
         curPuz = null;
         curPuzMan = null;
