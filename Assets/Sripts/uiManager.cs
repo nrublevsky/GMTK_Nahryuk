@@ -11,7 +11,7 @@ public class uiManager : MonoBehaviour
     public GameObject youWonScreen;
     private PuzzleManager puzzleManager;
     public TextMeshProUGUI livesText;
-    public GameObject MustPressKeys;
+    //public GameObject MustPressKeys;
     public GameManager gameManagerScript;    // Start is called before the first frame update
 
     public void Start()
