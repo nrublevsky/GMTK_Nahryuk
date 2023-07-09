@@ -12,7 +12,7 @@ public class uiManager : MonoBehaviour
     private PuzzleManager puzzleManager;
     public TextMeshProUGUI livesText;
     public GameObject MustPressKeys;
-    private GameManager gameManagerScript;    // Start is called before the first frame update
+    public GameManager gameManagerScript;    // Start is called before the first frame update
 
     public void Start()
     {
@@ -64,9 +64,9 @@ public class uiManager : MonoBehaviour
 
     public void GameOver() 
     {
-        puzzleManager.challengeDone = false;
+       /* puzzleManager.challengeDone = false;
         puzzleManager.challanegeIsInProgress = false;
-        puzzleManager.timerOn = false;
+        puzzleManager.timerOn = false;*/
         gameoverScreen.SetActive(true);
         /*Time.timeScale = 0f;*/
 
