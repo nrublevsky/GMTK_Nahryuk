@@ -45,4 +45,6 @@ public class ClickOnAllPointsChallenge : MonoBehaviour
         Debug.Log("Sound Play");
         clickAudio.PlayOneShot(clickSound, 1.0f);
     }
+
+
 }

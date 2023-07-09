@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NickTestScene.unity
     guid: e7fe645bf6a8016419e6f5f6f3cf3d8a
+  - enabled: 1
+    path: Assets/Scenes/NICKTestScene 1.unity
+    guid: 7949f99a13dc41c4da5ec72eb9ea7b15
   m_configObjects: {}

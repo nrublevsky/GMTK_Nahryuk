@@ -168,6 +168,18 @@ PrefabInstance:
       propertyPath: challengeDone
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3026764790918367551, guid: 0fd79e2c936858747ab68b9304764dde, type: 3}
+      propertyPath: clickOnObjectsChallange.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026764790918367551, guid: 0fd79e2c936858747ab68b9304764dde, type: 3}
+      propertyPath: clickOnObjectsChallange.Array.data[4]
+      value: 
+      objectReference: {fileID: 4254229312589481725}
+    - target: {fileID: 3026764790918367551, guid: 0fd79e2c936858747ab68b9304764dde, type: 3}
+      propertyPath: clickOnObjectsChallange.Array.data[5]
+      value: 
+      objectReference: {fileID: 4992881777236580726}
     - target: {fileID: 3341170838147247600, guid: 0fd79e2c936858747ab68b9304764dde, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.14166401
@@ -497,13 +509,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4948771603015513360, guid: 0fd79e2c936858747ab68b9304764dde, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7156730658216112672, guid: 0fd79e2c936858747ab68b9304764dde, type: 3}
       insertIndex: -1
       addedObject: {fileID: -4338636949700885368}
   m_SourcePrefab: {fileID: 100100000, guid: 0fd79e2c936858747ab68b9304764dde, type: 3}
+--- !u!1 &4254229312589481725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3613566044695932730, guid: 0fd79e2c936858747ab68b9304764dde, type: 3}
+  m_PrefabInstance: {fileID: 662020525416049095}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4992881777236580726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5505016868924420273, guid: 0fd79e2c936858747ab68b9304764dde, type: 3}
+  m_PrefabInstance: {fileID: 662020525416049095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7673615571185736679 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7156730658216112672, guid: 0fd79e2c936858747ab68b9304764dde, type: 3}

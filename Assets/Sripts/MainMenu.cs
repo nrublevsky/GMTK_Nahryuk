@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
    public void PlayGameEasy() 
     {
-        SceneManager.LoadScene("NickTestScene");
+        SceneManager.LoadScene("NickTestScene 1");
     
     }
 
