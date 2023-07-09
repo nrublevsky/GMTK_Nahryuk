@@ -7,6 +7,7 @@ public class HitMouth : MonoBehaviour
 
     public LooseTooth lt;
     public int hits;
+    public JawsBehavior jaws;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,15 @@ public class HitMouth : MonoBehaviour
         {
             if (hits == 0)
             {
-                StartCoroutine(Hit());
+                if (!jaws.chewingATM)
+                {
+                    StartCoroutine(Hit());
+                }
+                else
+                {
+                    Debug.Log("Can't hit atm< srry");
+                }
+                
             }
         }
     }

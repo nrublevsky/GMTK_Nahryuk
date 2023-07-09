@@ -9,9 +9,14 @@ public class GameManager : MonoBehaviour
 {
     [Header("Objects")]
     public GameObject jaws;
-    public LooseTooth ltooth;
+  
     public GameObject food;
+    public GameObject hand;
+    public GameObject puzzleSpawn;
+    public List<GameObject> puzzles;
+
     public List<GameObject> foodParts;
+    public List<GameObject> handPositions;
     public Animator jawsAnimator;
     public Animator foodAnimator;
     public Animator gmAnimator;
@@ -27,25 +32,17 @@ public class GameManager : MonoBehaviour
     public bool gameLost;
 
     [Header("Variables")]
-    public Vector3[] jPositions1;
-    public Vector3[] jPositions2;
-    public Vector3[] jPositions3;
 
-    public Vector3 puzzlePos;
 
+    public GameObject curPuz;
+    public PuzzleManager curPuzMan;
     // Start is called before the first frame update
     void Start()
     {
-        gameStarted = true;
-        /*foodHp = foodParts.Count;*/
+       
+        StartCoroutine(FirstRound());
+        
     }
-
-    // Update is called once per frame
-
-
-
-
-
 
     public void Update()
     {
@@ -54,10 +51,12 @@ public class GameManager : MonoBehaviour
 
     public void PlayGame()
     {
+
         /*gmAnimator.SetInteger("timesMoved", foodHp);*/
         //select random puzzle from puzzles list and instantiate in required position
         if (gameStarted)
         {
+            
             /*gmAnimator.SetInteger("timesMoved", foodHp);*/
             if (foodHp <= 0)
             {
@@ -83,7 +82,7 @@ public class GameManager : MonoBehaviour
                 //display you lose text
 
             }
-
+            
             TestHandMouth();
         }
     }
@@ -93,13 +92,18 @@ public class GameManager : MonoBehaviour
         int currLastIndex = foodParts.Count - 1;
         foodParts[currLastIndex].SetActive(false);
         foodParts.RemoveAt(currLastIndex);
+        handPositions.RemoveAt(currLastIndex);
+        hand.transform.position = handPositions[foodParts.Count - 1].transform.position;
         gmAnimator.SetInteger("timesMoved", foodHp);
     }
 
 
     public IEnumerator WinPuzzle()
     {
-        puzzleWon = true;
+        
+        puzzleWon = false;
+        curPuz = null;
+        curPuzMan = null;
 
         foodAnimator.SetTrigger("HitBack");
         yield return new WaitForSeconds(1f);
@@ -108,14 +112,50 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         foodAnimator.ResetTrigger("HitBack");
         foodAnimator.SetBool("Hitted", false);
+
+        PutPuzzle();
     }
 
     public void TestHandMouth()
     {
-
-        if (Input.GetKeyDown(KeyCode.V))
+        if (puzzleWon)
         {
             StartCoroutine(WinPuzzle());
         }
+    }
+
+    public void PutPuzzle()
+    {
+
+        if (curPuz == null)
+        {
+            GameObject go = CurrentPuzzle(puzzles);
+            curPuz = go;
+            curPuzMan = curPuz.GetComponent<PuzzleManager>();
+            curPuzMan.gm = this.gameObject.GetComponent<GameManager>();
+            Instantiate(go, puzzleSpawn.transform.position, puzzleSpawn.transform.rotation);
+        }
+    }
+
+    public IEnumerator FirstRound()
+    {
+
+        gameStarted = true;
+        /*puzzleWon = false;*/
+        gameWon = false;
+        gameLost = false;
+
+        GameObject go = CurrentPuzzle(puzzles);
+        curPuz = go;
+        curPuzMan = curPuz.GetComponent<PuzzleManager>();
+        curPuzMan.gm = this.gameObject.GetComponent<GameManager>();
+        Instantiate(go, puzzleSpawn.transform.position, puzzleSpawn.transform.rotation);
+
+        yield return null;
+    }
+
+    public GameObject CurrentPuzzle(List<GameObject> pzls)
+    {
+        return pzls[Random.Range(0, pzls.Count - 1)];
     }
 }

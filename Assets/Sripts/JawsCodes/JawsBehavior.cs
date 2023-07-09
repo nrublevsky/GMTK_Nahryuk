@@ -10,7 +10,9 @@ public class JawsBehavior : MonoBehaviour
     public GameObject lowJaw;
     public GameObject pivot;
     public Animator animator;
+    public Animator foodAnim;
 
+    public bool chewingATM;
 
     public float rotationAngleUp;
     public float rotationAngleDown;
@@ -65,19 +67,41 @@ public class JawsBehavior : MonoBehaviour
 
     public IEnumerator BiteFood(GameObject food)
     {
+        while (animName() == "JawChew")
+        {
+            chewingATM = true;
+        }
+
         Debug.Log("You bit! I Chew!");
         animator.SetTrigger("startChewing");
         animator.SetBool("Chewing", true);
+        /*chewingATM = true;*/
+
+        foodAnim.SetBool("beChewed", true);
+
+
         --gameManager.foodHp;
         gameManager.DisableBitten();
+
         yield return new WaitForSeconds(2f);
+
         animator.ResetTrigger("startChewing");
         animator.SetBool("Chewing", false);
         animator.SetBool("Chewed", true);
+
+        foodAnim.SetBool("beChewed", false);
+        
         yield return new WaitForSeconds(0.1f);
         animator.SetTrigger("startOpening");
-
     }
 
-    
+    public string animName()
+    {
+        AnimatorClipInfo[] m_CurrentClipInfo = this.animator.GetCurrentAnimatorClipInfo(0);
+        
+        
+        return m_CurrentClipInfo[0].clip.name;
+    }
+
+
 }
