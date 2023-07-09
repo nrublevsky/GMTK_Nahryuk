@@ -8,29 +8,30 @@ public class PuzzleManager : MonoBehaviour
 {
     public List<GameObject> clickOnObjectsChallange;
     public TextMeshProUGUI gameOverText;
-    public TextMeshProUGUI livesText;
+    
     public TextMeshProUGUI timeLeftText;
     public TextMeshProUGUI[] challengeText;
-    public GameManager gameManager;
+    private uiManager uiManager;
     private int lives;
     public bool timerOn = false;
     public Button restartButton;
-    private int timeLeft;
+    public int timeLeft;
     public bool isGameActive;
     public bool challengeDone;
     public bool challanegeIsInProgress;
     public float puzzleObjectsCount;
-    public bool mustPressSpace;
+    public bool mustPressKeys;
     public bool keyIsPressed;
     // Start is called before the first frame update
     void Start()
     {
         challengeDone = false;
         challanegeIsInProgress = true;
-        mustPressSpace = false;
+        mustPressKeys = false;
         keyIsPressed = true;
+        timerOn = false;
         timeLeft = Random.Range(3, 9);
-        
+        uiManager=GameObject.Find("UIManager").GetComponent<uiManager>();
     }
 
     // Update is called once per frame
@@ -49,9 +50,12 @@ public class PuzzleManager : MonoBehaviour
         {   
             challanegeIsInProgress = false;
             timeLeft = 0;
-            Debug.Log("Game Over");
+            uiManager.GameOver();
             
+
+
         }
+        
 
     }
 
@@ -87,15 +91,15 @@ public class PuzzleManager : MonoBehaviour
 
 
     }
-    public void MustPressSpace() 
+    public void MustPressKeys() 
     { 
-    if ( mustPressSpace ) 
+    if (mustPressKeys) 
         {
             challanegeIsInProgress = true;
         
-        if(Input.GetKeyDown(KeyCode.Space)) 
+        if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D)) 
             {
-
+                mustPressKeys = false;
                 Debug.Log("Space is pressed! Well done!");
             
             
