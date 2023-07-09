@@ -235,6 +235,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 6224318414564554257, guid: e968b696d45c50c43a34a6f48d2b6fc7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -367,6 +371,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 79746773823614805, guid: 02c76344ca4164c4797c174de7bed6cf, type: 3}
   m_PrefabInstance: {fileID: 326724523}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &504467772 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8770638686515837102, guid: a90e8f48cd55cd34c894d757e473f8ff, type: 3}
+  m_PrefabInstance: {fileID: 1373834419}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &531916649
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,6 +570,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4822678381033450279, guid: 3ce39ad885100b84d8fc54933393d366, type: 3}
+      propertyPath: timeLeftText
+      value: 
+      objectReference: {fileID: 504467772}
     - target: {fileID: 5576960951953015293, guid: 3ce39ad885100b84d8fc54933393d366, type: 3}
       propertyPath: m_RootOrder
       value: 9
